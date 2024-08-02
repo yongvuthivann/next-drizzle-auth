@@ -10,6 +10,7 @@ export default async function DashboardPage() {
   if (!session?.user) return redirect("/");
 
   const user = session.user;
+
   return (
     <div className="min-h-screen flex flex-col items-center justify-center">
       <div className="flex flex-col w-full max-w-md">

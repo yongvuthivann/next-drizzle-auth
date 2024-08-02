@@ -26,10 +26,17 @@ export default function Home() {
               <span className="text-sm ml-2">Continue with Github</span>
             </Button>
           </form>
-          <Button className="w-full" size={"lg"} variant="secondary">
-            <Chrome />
-            <span className="text-sm ml-2">Continue with Google</span>
-          </Button>
+          <form
+            action={async () => {
+              "use server";
+              await signIn("google", { redirectTo: "/dashboard" });
+            }}
+          >
+            <Button className="w-full" size={"lg"} variant="secondary">
+              <Chrome />
+              <span className="text-sm ml-2">Continue with Google</span>
+            </Button>
+          </form>
         </div>
       </div>
     </main>
